@@ -10,7 +10,7 @@ const path = require('path'),
  * @type {Object}
  */
 
-let port = 80
+let port = 9091
 var config = {
     env: __env,
     webpack: {
