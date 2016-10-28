@@ -89,19 +89,20 @@ var CEXGenerator = generators.Base.extend({
         console.log('conflicts - cex')
     },
     'install': function() {
-        // install cex lib
+        // install dependencies
         console.log('install - cex')
         var done = this.async();
         shellby.series([
-            'git init',
-            'git submodule add http://211.149.154.87/ces/cex.git src/components/cex',
-            'yarn install'
+            'git init', 'git submodule add https://github.com/nasawz/cex.git src/components/cex', 'yarn install'
         ], function(err) {
             done()
         });
     },
     'end': function() {
         console.log('end - cex')
+        shellby.exec('yarn start', function(err) {
+            console.log('app run');
+        });
     }
 })
 
