@@ -1,0 +1,20 @@
+{
+    "name": "generator-cex",
+    "version": "0.0.1",
+    "description": "cex app generator",
+    "main": "index.js",
+    "files": [
+        "app",
+        "router"
+    ],
+    "keywords": [
+        "yeoman-generator"
+    ],
+    "author": "nasa.wang",
+    "license": "MIT",
+    "dependencies": {
+        "lodash": "^4.16.4",
+        "shellby": "^0.2.0",
+        "yeoman-generator": "^0.24.1"
+    }
+}
