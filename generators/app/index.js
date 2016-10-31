@@ -26,6 +26,13 @@ var CEXGenerator = generators.Base.extend({
                 validate: function(input) {
                     return input != ''
                 }
+            }, {
+                type: 'list',
+                name: 'pkm',
+                choices: [
+                    'npm', 'yarn'
+                ],
+                message: 'Your package manager'
             },
             // {
             //     type: 'confirm',
@@ -92,15 +99,17 @@ var CEXGenerator = generators.Base.extend({
         // install dependencies
         console.log('install - cex')
         var done = this.async();
-        shellby.series([
-            'git init', 'git submodule add https://github.com/nasawz/cex.git src/components/cex', 'yarn install'
-        ], function(err) {
+        var _sa = [
+            'git init', 'git submodule add https://github.com/nasawz/cex.git src/components/cex', this.answers.pkm + ' install'
+        ]
+
+        shellby.series(_sa, function(err) {
             done()
         });
     },
     'end': function() {
         console.log('end - cex')
-        shellby.exec('yarn start', function(err) {
+        shellby.exec('npm start', function(err) {
             console.log('app run');
         });
     }

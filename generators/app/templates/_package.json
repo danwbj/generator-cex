@@ -4,14 +4,14 @@
     "description": "<%= name %> app base on cex generator",
     "main": "index.js",
     "scripts": {
-        "start": "yarn run dev",
+        "start": "npm run dev",
         "sprites": "node ./tools/gulpfile.js ",
         "dev": "node ./tools/webpack.config.js",
         "pub": "export NODE_ENV=__PROD__ && node ./tools/webpack.config.js",
         "lint": "eslint 'src/modules/**/*.@(js|jsx)' ",
-        "pretest": "yarn run lint",
+        "pretest": "npm run lint",
         "test": "mocha --compilers js:babel-core/register --recursive",
-        "deploy-vhome": "yarn run pub && node ./tools/deploy.js"
+        "deploy-vhome": "npm run pub && node ./tools/deploy.js"
     },
     "author": "<%= author %>",
     "license": "MIT",
