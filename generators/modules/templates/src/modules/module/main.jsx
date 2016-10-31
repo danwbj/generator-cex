@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 import Routes from './routes/spa.jsx'
+import {navigate} from 'react-mini-router'
 
 const App = React.createFactory(Routes)
 
@@ -24,3 +25,7 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('container')
 )
+
+if (window.location.hash == '#/') {
+    navigate('/<%= l_name %>/home')
+}

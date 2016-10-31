@@ -1,6 +1,7 @@
 /**
  * create by <%= author %>
  */
+
 import React from 'react'
 
 const Home = React.createClass({

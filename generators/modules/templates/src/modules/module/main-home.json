@@ -1,0 +1,40 @@
+{
+    "dev":{
+        "title":"<%= l_name %>-home",
+        "filename":"<%= l_name %>-home",
+        "chunks":{
+            "vendor":{
+                "attr":{
+                    "js":"",
+                    "css":""
+                }
+            },
+            "<%= l_name %>-home":{
+                "attr":{
+                    "js":"",
+                    "css":""
+                }
+            }
+        }
+    },
+    "pub":{
+        "title":"<%= l_name %>-home",
+        "filename":"<%= l_name %>-home",
+        "chunks":{
+            "libs/react": null,
+            "libs/react-dom": null,
+            "vendor":{
+                "attr":{
+                    "js":"",
+                    "css":""
+                }
+            },
+            "<%= l_name %>-home":{
+                "attr":{
+                    "js":"",
+                    "css":""
+                }
+            }
+        }
+    }
+}

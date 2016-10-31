@@ -5,7 +5,7 @@
     "main": "index.js",
     "files": [
         "app",
-        "router"
+        "modules"
     ],
     "keywords": [
         "yeoman-generator"
