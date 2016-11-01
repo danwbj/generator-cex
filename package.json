@@ -6,7 +6,8 @@
     "files": [
         "app",
         "modules",
-        "page"
+        "page",
+        "components"
     ],
     "keywords": [
         "yeoman-generator"
