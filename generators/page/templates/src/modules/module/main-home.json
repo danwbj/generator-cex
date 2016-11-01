@@ -1,0 +1,40 @@
+{
+    "dev": {
+        "title": "<%= l_name %>-<%= ab %>",
+        "filename": "<%= l_name %>-<%= ab %>",
+        "chunks": {
+            "vendor": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            },
+            "<%= l_name %>-<%= ab %>": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            }
+        }
+    },
+    "pub": {
+        "title": "<%= l_name %>-<%= ab %>",
+        "filename": "<%= l_name %>-<%= ab %>",
+        "chunks": {
+            "libs/react": null,
+            "libs/react-dom": null,
+            "vendor": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            },
+            "<%= l_name %>-<%= ab %>": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            }
+        }
+    }
+}
