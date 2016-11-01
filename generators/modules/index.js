@@ -45,6 +45,8 @@ var CEXGenerator = generators.Base.extend({
                     l_name: _.toLower(m),
                     author: author
                 }
+                self.fs.copyTpl(self.templatePath('src/modules/module/actions/homeActions.js'), self.destinationPath('src/modules/' + module.l_name + '/actions/homeActions.js'), module)
+                self.directory('src/modules/module/adapter', 'src/modules/' + module.l_name + '/adapter')
                 self.fs.copyTpl(self.templatePath('src/modules/module/constants/actionTypes.js'), self.destinationPath('src/modules/' + module.l_name + '/constants/actionTypes.js'), module)
                 self.fs.copyTpl(self.templatePath('src/modules/module/containers/homeContainer.js'), self.destinationPath('src/modules/' + module.l_name + '/containers/homeContainer.js'), module)
                 self.fs.copyTpl(self.templatePath('src/modules/module/reducers/index.js'), self.destinationPath('src/modules/' + module.l_name + '/reducers/index.js'), module)
