@@ -9,7 +9,6 @@ const Home = React.createClass({
             <div>
                 <%= u_name %> home view
             </div>
-
         )
     }
 

@@ -10,7 +10,6 @@ const <%= Ab %> = React.createClass({
             <div>
                 <%= u_name %> <%= ab %> view
             </div>
-
         )
     }
 
