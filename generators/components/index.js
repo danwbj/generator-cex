@@ -43,7 +43,8 @@ var CEXGenerator = generators.Base.extend({
                 author: author
             }
             self.fs.copyTpl(self.templatePath('src/demo/demo.jsx'), self.destinationPath('src/components/' + component.ab+'/'+ component.ab + '.jsx'), component)
-            self.fs.copyTpl(self.templatePath('src/demo/demo.less'), self.destinationPath('src/components/' + component.ab+'/' + component.ab + '.less'), component)
+            self.fs.copyTpl(self.templatePath('src/demo/demo.less'), self.destinationPath('src/components/' + component.ab + '/' + component.ab + '.less'), component)
+            self.fs.copyTpl(self.templatePath('src/vdemo.jsx'), self.destinationPath('example/modules/cex/views/' + 'v'+component.ab + '.jsx'), component)
         }
     },
     'conflicts': function() {
