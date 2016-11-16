@@ -7,11 +7,11 @@ import classNames from 'classnames'
 
 import './<%= ab %>.less'
 
-const <%= Ab %> = React.createClass({
+const <%= Ab_camel %> = React.createClass({
     render() {
         return (
             <div>
-               <%= ab %> component
+               <%= ab_camel %> component
             </div>
 
         )
@@ -19,4 +19,4 @@ const <%= Ab %> = React.createClass({
 
 })
 
-export default <%= Ab %>
+export default <%= Ab_camel %>

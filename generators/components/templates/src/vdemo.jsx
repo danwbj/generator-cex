@@ -4,13 +4,13 @@
 
 import React from 'react'
 import classNames from 'classnames'
-import <%= Ab %> from 'cex/components/tab/<%= ab %>.jsx'
+import <%= Ab_camel %> from 'cex/components/<%= ab %>/<%= ab %>.jsx'
 
-const V<%= Ab %> = React.createClass({
+const V<%= Ab_camel %> = React.createClass({
     render() {
         return (
             <div>
-                <<%= Ab %>/>
+                <<%= Ab_camel %>/>
             </div>
 
         )
@@ -18,4 +18,4 @@ const V<%= Ab %> = React.createClass({
 
 })
 
-export default V<%= Ab %>
+export default V<%= Ab_camel %>

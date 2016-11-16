@@ -38,8 +38,9 @@ var CEXGenerator = generators.Base.extend({
             var author = this.answers.author
             var self = this
             var component = {
-                Ab: _.upperFirst(this.answers.component),
                 ab: _.toLower(this.answers.component),
+                Ab_camel: _.upperFirst(_.camelCase(this.answers.component)),
+                ab_camel: _.camelCase(this.answers.component),
                 author: author
             }
             self.fs.copyTpl(self.templatePath('src/demo/demo.jsx'), self.destinationPath('src/components/' + component.ab+'/'+ component.ab + '.jsx'), component)
