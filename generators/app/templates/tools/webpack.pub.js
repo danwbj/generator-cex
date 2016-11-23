@@ -6,6 +6,7 @@ const path = require('path'),
 
 var config = require('./config'),
     configWebpack = config.webpack
+var pkg = require('../package.json')
 
 var HtmlResWebpackPlugin = require('html-res-webpack-plugin'),
     Clean = require('clean-webpack-plugin'),
@@ -22,7 +23,7 @@ var prodConfig = {
     output: {
         publicPath: configWebpack.cdn,
         path: path.join(configWebpack.path.pub),
-        filename: 'js/[name]-' + configWebpack.chunkhash + '.js',
+        filename: pkg.version+'/js/[name]-' + configWebpack.chunkhash + '.js',
         chunkFilename: 'chunk/[name]-' + configWebpack.chunkhash + '.js',
     },
     module: {
@@ -43,14 +44,14 @@ var prodConfig = {
                 })
             }, {
                 test: /\.(eot|woff|ttf|svg)/,
-                loader: 'url-loader?limit=1000&name=fonts/[name].[ext]'
+                loader: 'url-loader?limit=1000&name='+pkg.version+'/fonts/[name].[ext]'
             }, {
                 test: /\.html$/,
                 loader: 'html-loader'
             }, {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
-                    'url-loader?limit=1000&name=img/[name]' + configWebpack.hash + '.[ext]',
+                    'url-loader?limit=1000&name='+pkg.version+'/img/[name]' + configWebpack.hash + '.[ext]',
                     // 压缩png图片
                     'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
                 ],
@@ -100,7 +101,7 @@ var prodConfig = {
         new webpack.optimize.CommonsChunkPlugin(
             {
                 name: 'vendor',
-                filename: 'js/[name]-' + configWebpack.chunkhash + '.js'
+                filename: pkg.version+'/js/[name]-' + configWebpack.chunkhash + '.js'
             }
         ),
         new OptimizeCssAssetsPlugin({
@@ -117,7 +118,7 @@ var prodConfig = {
             },
             canPrint: true
         }),
-        new ExtractTextPlugin('css/[name]-' + configWebpack.contenthash + '.css', {
+        new ExtractTextPlugin(pkg.version+'/css/[name]-' + configWebpack.contenthash + '.css', {
             filenamefilter: function(filename) {
                 return filename.replace('/js', '')
             },
@@ -149,7 +150,8 @@ forEach(prodConfig.entry,function (value) {
     let conf = require(value[0].replace(/(jsx|js)$/g,'json'))
     prodConfig.addPlugins(HtmlResWebpackPlugin, {
         filename: conf.pub.filename + '.html',
-        title:conf.pub.title,
+        title: conf.pub.title,
+        version:pkg.version,
         template: 'tools/template.html',
         favicon: 'src/favicon.ico',
         chunks: conf.pub.chunks,
