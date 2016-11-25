@@ -108,10 +108,10 @@ var CEXGenerator = generators.Base.extend({
         // });
     },
     'end': function() {
-        console.log('end - cex')
-        shellby.exec('npm start', function(err) {
-            console.log('app run');
-        });
+        // console.log('end - cex')
+        // shellby.exec('npm start', function(err) {
+        //     console.log('app run');
+        // });
     }
 })
 
