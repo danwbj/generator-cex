@@ -97,15 +97,15 @@ var CEXGenerator = generators.Base.extend({
     },
     'install': function() {
         // install dependencies
-        // console.log('install - cex')
-        // var done = this.async();
-        // var _sa = [
-        //     'git init', 'git submodule add https://github.com/nasawz/cex.git src/components/cex', this.answers.pkm + ' install'
-        // ]
-        //
-        // shellby.series(_sa, function(err) {
-        //     done()
-        // });
+        console.log('install - cex')
+        var done = this.async();
+        var _sa = [
+            'git init', 'git submodule add https://github.com/nasawz/cex.git src/components/cex', this.answers.pkm + ' install'
+        ]
+        
+        shellby.series(_sa, function(err) {
+            done()
+        });
     },
     'end': function() {
         // console.log('end - cex')
